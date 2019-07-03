@@ -23,8 +23,8 @@ done
 git checkout gh-pages
 cp --recursive --force .deploy/readme/* .
 if ! git diff --quiet; then
-    git add README.md
-    git add charts
+    [[ -e ./README.md ]] && git add README.md
+    [[ -e ./charts ]] && git add charts
     git commit --message="Update chart docs" --signoff
     git push "$GIT_REPOSITORY_URL" gh-pages
 fi
