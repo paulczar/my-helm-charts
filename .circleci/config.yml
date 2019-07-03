@@ -1,2 +1,5 @@
 version: 2
 jobs:
+  do_nothing:
+    docker: []
+    steps: []
