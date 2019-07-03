@@ -15,16 +15,16 @@ git config user.name "$GIT_USERNAME"
 mkdir -p .deploy/readme
 cp --force README.md .deploy/readme/
 
+git checkout gh-pages
+git checkout master -- .circleci/config.yml
+
 for file in charts/*/*.md; do
-    mkdir -p ".deploy/readme/$(dirname "$file")"
-    cp --force "$file" ".deploy/readme/$(dirname "$file")"
+    mkdir -p "$(dirname "$file")"
+    git show "master:$file" > "$(dirname "$file")"
 done
 
-git checkout gh-pages
-cp --recursive --force .deploy/readme/* .
 if ! git diff --quiet; then
-    [[ -e ./README.md ]] && git add README.md
-    [[ -e ./charts ]] && git add charts
+    git add .
     git commit --message="Update chart docs" --signoff
     git push "$GIT_REPOSITORY_URL" gh-pages
 fi
