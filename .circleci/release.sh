@@ -81,9 +81,10 @@ update_index() {
     git config user.name "$GIT_USERNAME"
 
     for file in charts/*/*.md; do
-        echo $file
-        mkdir -p ".deploy/docs/$(dirname "$file")"
-        cp --force "$file" ".deploy/docs/$(dirname "$file")"
+        if [[ -e $file ]]; then
+            mkdir -p ".deploy/docs/$(dirname "$file")"
+            cp --force "$file" ".deploy/docs/$(dirname "$file")"
+        fi
     done
 
     git checkout gh-pages
