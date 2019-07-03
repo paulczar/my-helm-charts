@@ -81,7 +81,15 @@ update_index() {
 
     git checkout gh-pages
     cp --force .deploy/index.yaml index.yaml
-    git add index.yaml
+
+    git checkout master -- README.md
+
+    for file in charts/*/*.md; do
+        mkdir -p "$(dirname "$file")"
+        git show "master:$file" > "$(dirname "$file")"
+    done
+
+    git add .
     git commit --message="Update index.yaml" --signoff
     git push "$GIT_REPOSITORY_URL" gh-pages
 }

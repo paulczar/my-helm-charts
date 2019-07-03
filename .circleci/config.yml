@@ -19,15 +19,6 @@ jobs:
             echo "export GIT_REPOSITORY_NAME=$CIRCLE_PROJECT_REPONAME" >> $BASH_ENV
             .circleci/install_tools.sh
             .circleci/release.sh
-  update-docs:
-    machine: true
-    steps:
-      - checkout
-      - run:
-          command: |
-            echo "export GIT_REPOSITORY_URL=$CIRCLE_REPOSITORY_URL" >> $BASH_ENV
-            echo "export GIT_USERNAME=$CIRCLE_PROJECT_USERNAME" >> $BASH_ENV
-            .circleci/update_docs.sh
 
 workflows:
   version: 2
@@ -39,11 +30,3 @@ workflows:
               ignore: /.*/
             branches:
               only: master
-      - update-docs:
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only: master
-          requires:
-            - release-charts
