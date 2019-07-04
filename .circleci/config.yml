@@ -24,6 +24,7 @@ workflows:
   version: 2
   release:
     jobs:
+      - lint-scripts
       - release-charts:
           filters:
             tags:
