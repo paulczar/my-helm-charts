@@ -56,7 +56,6 @@ workflows:
             - lint-charts
   release:
     jobs:
-      - lint-scripts
       - release-charts:
           filters:
             tags:
