@@ -3,7 +3,16 @@ entries:
   app1:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-03T23:16:21.087774995Z"
+    created: "2019-07-04T21:17:45.519711805Z"
+    description: A Helm chart for Kubernetes
+    digest: 24443e430a161511baebc64807807986983bdfddc0be80c90c6d39cf0544fe51
+    name: app1
+    urls:
+    - https://github.com/paulczar/my-helm-charts/releases/download/app1-0.1.2/app1-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-07-04T21:17:45.651421148Z"
     description: A Helm chart for Kubernetes
     digest: 9fbf6f9d10fba82aa3b749875e137b283890136a7379efba2bbff0b645cb1c35
     name: app1
@@ -12,7 +21,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-03T23:16:21.376254864Z"
+    created: "2019-07-04T21:17:45.898312438Z"
     description: A Helm chart for Kubernetes
     digest: 48cf831b72febeac2860a0be372094250aea68a9c76147c028085c8802dd48ec
     name: app1
@@ -22,11 +31,11 @@ entries:
   app2:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-07-03T23:16:21.22793015Z"
+    created: "2019-07-04T21:17:45.773548295Z"
     description: A Helm chart for Kubernetes
     digest: 64b00fc4804aba524201f64e78ee22ad8e61d0923424f8e24e8b70befed88141
     name: app2
     urls:
     - https://github.com/paulczar/my-helm-charts/releases/download/app2-0.1.0/app2-0.1.0.tgz
     version: 0.1.0
-generated: "2019-07-03T23:16:20.624914794Z"
+generated: "2019-07-04T21:17:45.105293387Z"
